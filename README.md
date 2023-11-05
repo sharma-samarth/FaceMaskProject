@@ -9,15 +9,39 @@ wearing/removing mask and display of prediction.
 
 #### The model is capable of predicting multiple faces with or without masks at the same time
 
-## Working 
+### Project Overview
 
-### With Mask
+This project is designed to perform face mask detection using Convolutional Neural Networks (CNN) and OpenCV for live face mask detection. The project is implemented in Python and follows the steps outlined below:
 
-![image](mask.png)
+### Steps
 
-### No Mask
+1. **Import Necessary Libraries:**
+   - Importing libraries such as `numpy`, `keras`, `cv2` (OpenCV), and `datetime`.
 
-![image](nomask.png)
+2. **Build a CNN Model:**
+   - A sequential Keras model is created to classify images into two classes: "with mask" and "without mask". The model architecture consists of several convolutional layers, max-pooling layers, and fully connected layers.
+
+3. **Data Preprocessing:**
+   - Data augmentation is performed using the `ImageDataGenerator` to augment and preprocess the training and testing image data. It includes rescaling, shear range, zoom range, and horizontal flip.
+
+4. **Load and Train the Model:**
+   - The model is trained using the training data (`'train'` and `'test'` directories containing images of individuals with and without masks). The model is trained for 10 epochs using the `fit_generator` method.
+
+5. **Save the Trained Model:**
+   - The trained model is saved to a file named `'mymodel.h5'`.
+
+6. **Test Individual Images:**
+   - The script loads the saved model and performs inference on an individual image to predict whether the person is wearing a mask or not.
+
+7. **Implement Live Face Mask Detection:**
+   - The script captures video from the computer's webcam using OpenCV (`cv2.VideoCapture`).
+   - It uses a Haar Cascade Classifier (`haarcascade_frontalface_default.xml`) to detect faces in each frame of the video.
+   - For each detected face, it saves the face image as 'temp.jpg' and resizes it to 150x150 pixels.
+   - The model is then used to predict whether the person is wearing a mask or not, and the result is displayed on the video frame.
+   - The current date and time are also displayed on the frame.
+   - The video feed is displayed, and the program continues running until the 'q' key is pressed, at which point the video feed is closed and the program exits.
+
+This project provides real-time monitoring of mask usage in a video feed and combines machine learning (CNN) with computer vision techniques to achieve this task. The trained model is used to make predictions on each face detected in the video stream.
 
 
 
