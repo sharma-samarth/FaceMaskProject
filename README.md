@@ -1,3 +1,10 @@
+# With-mask
+![Screenshot 2023-11-09 185214](https://github.com/sharma-samarth/FaceMaskProject/assets/122161268/ce61deb7-9610-45c3-8925-88675b0c5cac)
+
+# Without-mask
+![Screenshot 2023-11-09 185110](https://github.com/sharma-samarth/FaceMaskProject/assets/122161268/5ec22a3a-257d-44f0-9627-8203af6fd0b9)
+
+
 # Face-Mask Detector
 Real time face-mask detection using Deep Learning and OpenCV
 
